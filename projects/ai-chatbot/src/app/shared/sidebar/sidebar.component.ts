@@ -7,7 +7,7 @@ import {
   signal,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { CommonModule, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 import { IconComponent } from '@ngx-templates/shared/icon';
@@ -24,12 +24,11 @@ const SIDEBAR_STATE_KEY = 'acb-sb-expanded';
   selector: 'acb-sidebar',
   imports: [
     RouterModule,
-    CommonModule,
     IconComponent,
     FooterComponent,
     ThemeSwitchComponent,
-    ChatLinkComponent,
-  ],
+    ChatLinkComponent
+],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
