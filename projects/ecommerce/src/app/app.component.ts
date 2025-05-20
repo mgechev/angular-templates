@@ -12,6 +12,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoaderService } from './shared/loader.service';
+import { httpResource } from '@angular/common/http';
 
 @Component({
   selector: 'ec-root',
@@ -29,6 +30,16 @@ import { LoaderService } from './shared/loader.service';
 export class AppComponent implements OnInit {
   categories = inject(CategoriesService);
   loader = inject(LoaderService);
+  
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  protected resource: any = null;
+  constructor() {
+    if (typeof window !== 'undefined') {
+      this.resource = httpResource(() => {
+        return `foobar`;
+      });
+    }
+  }
 
   ngOnInit(): void {
     this.categories.loadCategories();

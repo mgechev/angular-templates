@@ -14,6 +14,8 @@ import { ProductsService } from './data-access/products.service';
 import { CartService } from './data-access/cart.service';
 import { CachedRouteReuseStrategy } from './shared/cached-route-reuse-strategy.service';
 import { ecommerceRequestResponseMock } from './shared/utils/ec-request-response-mock';
+import { HttpBackend, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { FetchMockBackend } from './mock-fetch-backend';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -29,6 +31,11 @@ export const appConfig: ApplicationConfig = {
     {
       provide: RouteReuseStrategy,
       useClass: CachedRouteReuseStrategy,
+    },
+    provideHttpClient(withInterceptors([])),
+    {
+      provide: HttpBackend,
+      useClass: FetchMockBackend
     },
   ],
 };

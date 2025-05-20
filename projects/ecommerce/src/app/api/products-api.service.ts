@@ -6,6 +6,7 @@ import { buildQueryParamsString } from '@ngx-templates/shared/utils';
 import { Product } from '../../models';
 import { environment } from '../../environments/environment';
 import { mapProduct, mapProducts } from './utils/mappers';
+import { httpResource } from '@angular/common/http';
 
 export type GetProductsParams = Partial<{
   categoryId: string;
