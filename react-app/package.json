@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "react-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +11,8 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
+    "@types/react-router-dom": "^5.3.3",
+    "react-router-dom": "^7.6.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
